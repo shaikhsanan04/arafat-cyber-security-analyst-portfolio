@@ -1,0 +1,119 @@
+.skills {
+  background: var(--surface-color);
+  position: relative;
+  z-index: 1;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(16, 185, 129, 0.03) 0%, 
+    rgba(245, 158, 11, 0.03) 100%);
+  z-index: -1;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.skill-category {
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-normal);
+}
+
+.skill-category:hover::before {
+  transform: scaleX(1);
+}
+
+.skill-category:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px var(--shadow-medium);
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+
+.skill-item:hover {
+  background: var(--surface-hover);
+  transform: translateX(4px);
+}
+
+.skill-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.skill-name {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,261 @@
+.hero {
+  width : 99.5vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--background-color);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.mesh-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(16, 185, 129, 0.1) 0%, 
+    rgba(245, 158, 11, 0.1) 50%, 
+    rgba(16, 185, 129, 0.05) 100%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.app.dark .mesh-gradient {
+  background: linear-gradient(135deg, 
+    rgba(16, 185, 129, 0.15) 0%, 
+    rgba(245, 158, 11, 0.15) 50%, 
+    rgba(16, 185, 129, 0.08) 100%);
+}
+
+.geometric-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.05;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 80% 50%, rgba(245, 158, 11, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Cybersecurity Textures */
+.cyber-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+.app.dark .cyber-grid {
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.2) 1px, transparent 1px);
+  opacity: 0.4;
+}
+
+.binary-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 15%),
+    radial-gradient(circle at 70% 30%, rgba(245, 158, 11, 0.1) 0%, transparent 15%);
+  animation: binaryFlow 8s linear infinite;
+}
+
+.app.dark .binary-rain {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.2) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.2) 0%, transparent 20%),
+    radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.15) 0%, transparent 15%),
+    radial-gradient(circle at 70% 30%, rgba(245, 158, 11, 0.15) 0%, transparent 15%);
+}
+
+.security-nodes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(16, 185, 129, 0.4) 2px, transparent 2px),
+    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.4) 2px, transparent 2px),
+    radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 75% 25%, rgba(245, 158, 11, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.2) 1px, transparent 1px);
+  background-size: 200px 200px, 250px 250px, 150px 150px, 180px 180px, 100px 100px;
+  animation: nodesPulse 6s ease-in-out infinite;
+}
+
+.app.dark .security-nodes {
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(16, 185, 129, 0.6) 2px, transparent 2px),
+    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.6) 2px, transparent 2px),
+    radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.4) 1px, transparent 1px),
+    radial-gradient(circle at 75% 25%, rgba(245, 158, 11, 0.4) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.3) 1px, transparent 1px);
+}
+
+.cyber-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(16, 185, 129, 0.1) 49%, rgba(16, 185, 129, 0.1) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(245, 158, 11, 0.1) 49%, rgba(245, 158, 11, 0.1) 51%, transparent 52%);
+  background-size: 300px 300px, 400px 400px;
+  animation: linesMove 10s linear infinite;
+}
+
+.app.dark .cyber-lines {
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(16, 185, 129, 0.15) 49%, rgba(16, 185, 129, 0.15) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(245, 158, 11, 0.15) 49%, rgba(245, 158, 11, 0.15) 51%, transparent 52%);
+}
+
+/* Cybersecurity Animations */
+@keyframes gridPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes binaryFlow {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50px) rotate(360deg);
+  }
+}
+
+@keyframes nodesPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  66% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes linesMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 300px 300px, -400px 400px;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary:hover{
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 200px;
+    justify-content: center;
+  }
+}

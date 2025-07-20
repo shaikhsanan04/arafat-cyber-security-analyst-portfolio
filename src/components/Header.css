@@ -1,0 +1,119 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1002;
+  transition: all var(--transition-normal);
+}
+
+.app.dark .header {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  min-height: 70px;
+}
+
+.nav-brand .logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-color);
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width var(--transition-fast);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  z-index: 10;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-hover);
+  color: var(--primary-color);
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.theme-toggle svg path,
+.theme-toggle svg line,
+.theme-toggle svg circle {
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .navbar {
+    justify-content: space-between;
+  }
+}
